@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Homework 5th</title>
+  </head>
+
+  <body>
+    <div>
+      <ul class="tabs">
+        <li class="marginRight tabs-item">
+          <a href="#" class="tabs-link active" aria-current="page">Form</a>
+        </li>
+        <li class="marginRight tabs-item">
+          <a href="#" class="tabs-link active" aria-current="page">Table</a>
+        </li>
+      </ul>
+    </div>
+    <div class="userForm marginTop">
+      <h2>Form Registrasi</h2>
+      <form id="registrationForm">
+        <div class="marginBottom">
+          <label class="labelForm" for="name">Nama</label>
+          <input class="inputForm" type="text" id="name" />
+        </div>
+        <div class="marginBottom">
+          <label class="labelForm" for="age">Umur</label>
+          <input class="inputForm" type="number" id="age" />
+        </div>
+        <div class="marginBottom">
+          <label class="labelForm" for="money">Uang Sangu</label>
+          <input class="inputForm" type="number" id="money" />
+        </div>
+        <button class="buttonSubmit" type="button" onclick="registerUser()">
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="tableList">
+      <h2>List Pendaftar</h2>
+      <table id="userTable" class="userTable">
+        <thead>
+          <tr>
+            <th>Nama Peserta</th>
+            <th>Umur Peserta</th>
+            <th>Uang Sangu Peserta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr class="trBody">
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

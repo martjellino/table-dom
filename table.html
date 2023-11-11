@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Homework 5th</title>
+  </head>
+
+  <body>
+    <div>
+      <ul class="tabs">
+        <li class="marginRight tabs-item">
+          <a href="/form.html" class="tabs-link active" aria-current="page"
+            >Form</a
+          >
+        </li>
+        <li class="marginRight tabs-item">
+          <a href="/table.html" class="tabs-link active" aria-current="page"
+            >Table</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="tableList">
+      <h2>List Pendaftar</h2>
+      <table id="userTable" class="userTable">
+        <thead>
+          <tr>
+            <th>Nama Peserta</th>
+            <th>Umur Peserta</th>
+            <th>Uang Sangu Peserta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr class="trBody">
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <div class="marginLeft marginTop">
+      <h2>Resume</h2>
+      <p>
+        Rata-rata pendaftar memiliki uang sangu sebesar ... dengan rata-rata
+        umur ...
+      </p>
+    </div>
+    <!-- <script type="module" src="main.js"></script> -->
+    <script>
+      class User {
+        constructor(name, age, money) {
+          this.name = name;
+          this.age = age;
+          this.money = money;
+        }
+      }
+      
+      const users = [];
+      console.log(users)
+      
+      function registerUser() {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const money = document.getElementById("money").value;
+      
+        const createUser = new User(name, age, money);
+        users.push(createUser);
+        updateTable();
+        clearForm();
+      }
+      
+      function updateTable() {
+        const tableBody = document.getElementById('userTable')
+      //   const tableBody = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+      
+        users.forEach((user) => {
+          const row = tableBody.insertRow()
+      
+          const cell1 = row.insertCell();
+          const cell2 = row.insertCell();
+          const cell3 = row.insertCell();
+      
+          cell1.innerHTML = user.name;
+          cell2.innerHTML = user.age;
+          cell3.innerHTML = user.money;
+      
+          tableBody.appendChild(row);
+      
+          // // Append cells to the row
+          // row.appendChild(cell1);
+          // row.appendChild(cell2);
+          // row.appendChild(cell3);
+      
+          // // Append the row to the table body
+          // tableBody.appendChild(row);
+        });
+      }
+      
+      function clearForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("money").value = "";
+      }
+    </script>
+  </body>
+</html>
